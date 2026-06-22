@@ -1,0 +1,32 @@
+# Copy to config.yaml (gitignored). Non-secret settings only.
+#
+# Secrets (TIDBYT_DEVICE_ID, TIDBYT_API_TOKEN) come from the environment — sourced
+# from ~/.zsh_secrets by the systemd unit — NOT from this file.
+#
+# Any field below can be overridden by an environment variable of the same
+# UPPER_CASE name (env wins). Example: REFRESH_INTERVAL_MINUTES=5
+
+# Source Google calendar. Find it in Google Calendar → Settings → the calendar →
+# "Integrate calendar" → Calendar ID. The Tidbyt account's primary calendar is
+# just its email address.
+calendar_id: "your-calendar-id@group.calendar.google.com"
+
+# IANA timezone used to format event dates. Defaults to the host's local tz if
+# omitted.
+timezone: "America/Los_Angeles"
+
+# How often to refetch + re-push.
+refresh_interval_minutes: 15
+
+# Tidbyt installation ID (the tile's stable slot in the device rotation).
+installation_id: "calendar"
+
+# OAuth artifacts, kept OUTSIDE the repo. The token file is created on first run
+# by the one-time consent flow; the credentials file is your downloaded OAuth
+# client. ~ is expanded.
+credentials_file: "~/.tidbyt/calendar/credentials.json"
+token_file: "~/.tidbyt/calendar/token.pickle"
+
+# Flask preview/control server.
+host: "127.0.0.1"
+port: 8080

@@ -1,0 +1,20 @@
+[Unit]
+Description=Tidbyt Calendar (next 5 Google Calendar events -> Tidbyt tile)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=aksh
+# HOME resolves config.yaml-adjacent paths and the OAuth dir (~/.tidbyt/calendar).
+Environment=HOME=/home/aksh
+Environment=PYTHONUNBUFFERED=1
+WorkingDirectory=/home/aksh/home-services/tidbyt_calendar
+# zsh sources the (zsh-syntax) secrets file (TIDBYT_DEVICE_ID, TIDBYT_API_TOKEN),
+# then execs the venv console script. pixlet must be on PATH or set PIXLET_BIN.
+ExecStart=/usr/bin/zsh -c 'source /home/aksh/.zsh_secrets && exec /home/aksh/home-services/tidbyt_calendar/.venv/bin/tidbyt-calendar'
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
