@@ -9,6 +9,8 @@ User=aksh
 # HOME resolves config.yaml-adjacent paths and the OAuth dir (~/.tidbyt/calendar).
 Environment=HOME=/home/aksh
 Environment=PYTHONUNBUFFERED=1
+# `zsh -c` is non-login, so ~/.local/bin is not on PATH — point at pixlet directly.
+Environment=PIXLET_BIN=/home/aksh/.local/bin/pixlet
 WorkingDirectory=/home/aksh/home-services/tidbyt_calendar
 # zsh sources the (zsh-syntax) secrets file (TIDBYT_DEVICE_ID, TIDBYT_API_TOKEN),
 # then execs the venv console script. pixlet must be on PATH or set PIXLET_BIN.
