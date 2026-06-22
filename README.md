@@ -7,7 +7,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white)
 ![Pixlet](https://img.shields.io/badge/Pixlet-v0.34-7C3AED)
 ![Tidbyt](https://img.shields.io/badge/Tidbyt-64×32-F59E0B)
-![Starlark](https://img.shields.io/badge/Starlark-tile-46C8FF)
+![License](https://img.shields.io/badge/license-MIT-46C8FF)
 
 <img src="assets/demo.gif" width="512" alt="Tidbyt Calendar — five upcoming events scrolling on a 64×32 display">
 
@@ -164,3 +164,7 @@ pixlet render src/tidbyt_calendar/tidbyt/app.star \
 
 The tile layout lives in [`src/tidbyt_calendar/tidbyt/app.star`](./src/tidbyt_calendar/tidbyt/app.star);
 the colors are constants at the top of that file.
+
+## License
+
+[MIT](./LICENSE)
